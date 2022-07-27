@@ -5,8 +5,10 @@
 # Host Server zabbix
 ### Atualizando o sistema
 sudo apt update
+
 ### Instalando o apache
 sudo apt install apache2
+
 ### Habilitando o apache e fazendo o start
 systemctl enable apache2
 
@@ -14,26 +16,35 @@ systemctl start apache2
 
 ### visualizando o status do apache
 systemctl status apache2
+
 ### Instalando o php e seus pacotes
 sudo apt install php-cli php-common php-dev php-pear php-gd php-mbstring php-mysql php-xml php-bcmath libapache2-mod-php
+
 ### Configurando o timezone do php
 cd /etc/php/7.4/
+
 ### Editando o arquivo php.ini
 nano apache2/php.ini
+
 nano cli/php.ini
 ### Em date.timezone = Asia/Singapore
 ### Substituir por  date.timezone = America/Sao_Paulo
 Restart do apache
+
 systemctl restart apache2
 ### Instalando o mariadb
 sudo apt install mariadb-server mariadb-client
+
 ### Iniciando e fazendo start do banco
 systemctl start mariadb
+
 systemctl enable mariadb
 ### Criando uma senha para o banco
 mysql_secure_installation
+
 ### Logando no banco de dados
 mysql -u root -p
+
 ### Criando e configurando o banco
 create database zabbix character set utf8 collate utf8_bin;
 
@@ -47,44 +58,58 @@ quit
 
 ### Baixando o zabbix
 wget -q https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
+
 ### Instalando o zabbix
 sudo dpkg -i zabbix-release_5.0-1+focal_all.deb
+
 ### Atualizando o sistema
 sudo apt update
+
 ### Instalando o mysql
 sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-agent
+
 ### Importando as tabelas do banco
 zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz | mysql -uzabbix -p zabbix
+
 ### Configurando o zabbix server
 nano /etc/zabbix/zabbix_server.conf
+
 ### Descomentar as linhas e informar a senha do seu banco
 DBHost=localhost
 
 DBPassword=zabbix
 ### Salvar e sair
+
 ### habilitando e fazendo start no xabbix-server
 systemctl start zabbix-server
 
 systemctl enable zabbix-server
 ### Conferir se o zabbix-server está funcionando
 systemctl status zabbix-server
+
 ### Visualizar os logs do zabbix-server
 tail -f /var/log/zabbix/zabbix_server.log
 
 # Host Client zabbix
 ### Baixando o repositório do zabbix 5.0
 wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
+
 ### Instalando o zabbix-release_5.0-1+focal_all.deb
 sudo apt install ./zabbix-release_5.0-1+focal_all.deb
+
 ### Atualizando o sistema
 sudo apt update
+
 ### Configurando o zabbiz agent
 sudo nano /etc/zabbix/zabbix_agentd.conf
+
 ### No arquivo zabbix_agentd.conf é preciso fazer algumas alterações como por exemplo:
 ### Conferir o ip do server.
 Server= 127.0.0.1
+
 ### Em caso de haver algum problema na execução do zabbix, recomenda-se comentar o ServerActive 
 #ServerActive=127.0.0.1
+
 ### Alterar o nome do seu host “agente”. No exemplo abaixo foi utilizado um exemplo da
 ### configuração trocando somente o nome dex.
 Hostname=dex
@@ -111,8 +136,10 @@ UserParameter=gpu.utilisation,nvidia-smi --query-gpu=utilization.gpu --format=cs
 UserParameter=gpu.power,nvidia-smi --query-gpu=power.draw --format=csv,noheader,nounits -i 0
 
 ### Após a configuração é necessário salvar as configurações utilizando o Ctrl + x e logo vai aparecer uma mensagem que é necessário confirmar digitando y e enter.
+
 ## Reiniciando o agente
 sudo systemctl restart zabbix-client
+
 ### Para visualizar o log do agente
 sudo tail -f /var/log/zabbix/zabbix_agentd.log
 
