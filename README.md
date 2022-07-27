@@ -27,11 +27,21 @@ cd /etc/php/7.4/
 nano apache2/php.ini
 
 nano cli/php.ini
+
+### Editando o timezone de apache.conf
+nano /etc/zabbix/apache.conf
+
+##Descomentar o date.timezone e mudar para America/Sao_Paulo
+
 ### Em date.timezone = Asia/Singapore
 ### Substituir por  date.timezone = America/Sao_Paulo
 Restart do apache
+### Em caso de apresentar algum erro relacionado ao Apache 
+sudo /etc/init.d/apache2 restart
 
+### Caso não houver erro
 systemctl restart apache2
+
 ### Instalando o mariadb
 sudo apt install mariadb-server mariadb-client
 
