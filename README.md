@@ -119,7 +119,7 @@ Hostname=dex
 **nvidia-smi**, a partir das informações mostradas é só digitar **sudo apt install nvidia-versão_disponível**. Ex: **sudo apt install nvidia-340**.
 	Após a instalação do driver é necessário reiniciar o sistema, digitando **sudo reboot**. E logo em seguida é necessário  fazer o restart do zabbix sudo systemctl restart zabbix-agent. Agora vamos fazer o start **sudo systemctl start zabbix-agent** e para visualizar o zabbix está funcionando corretamente é só digitar o **sudo systemctl status zabbix-agent**.
  
-Em caso de haver uma GPU é necessário inserir no agente do zabbix zabbix_agentd.conf parâmetros no para que o zabbix web consiga acessar os dados. Podem ser encontrados [Aqui](https://github.com/RichardKav/zabbix-nvidia-smi-integration/).
+Em caso de haver uma GPU é necessário inserir no agente do zabbix zabbix_agentd.conf parâmetros no para que o zabbix web consiga acessar os dados. Podem ser encontrados [Aqui](https://raw.githubusercontent.com/RichardKav/zabbix-nvidia-smi-integration/master/README.md).
 
 UserParameter=gpu.temp,nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits -i 0
 
