@@ -8,8 +8,10 @@ sudo apt update
 ### Instalando o apache
 sudo apt install apache2
 ### Habilitando o apache e fazendo o start
-systemctl start apache2
 systemctl enable apache2
+
+systemctl start apache2
+
 ### visualizando o status do apache
 systemctl status apache2
 ### Instalando o php e seus pacotes
