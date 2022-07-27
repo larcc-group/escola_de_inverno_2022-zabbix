@@ -1,4 +1,4 @@
- [Link para baixar o Ubuntu Server 20.04]([https://raw.githubusercontent.com/larcc-group/Escola-de-inverno-2022-zabbix/main/nvidia.xml?token=GHSAT0AAAAAABW3RGC2WRPZKS5AEV2VQNXUYXAKQMQ](https://ubuntu.com/download/server).
+ [Link para baixar o Ubuntu Server 20.04](https://ubuntu.com/download/server).
 
 [Link para baixar o VMWARE](https://www.vmware.com/br/products/workstation-player.html).
 
