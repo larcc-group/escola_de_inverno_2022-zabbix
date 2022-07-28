@@ -2,9 +2,9 @@
 
 [Link para baixar o VMWARE](https://www.vmware.com/br/products/workstation-player.html).
 
-### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Host Server zabbix 
-### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### -----------------------------------------------------------------------------------------------------------------------------
+# Host Server zabbix 🖥️
+### -----------------------------------------------------------------------------------------------------------------------------
 
 ### Atualizando o sistema
 sudo apt update
@@ -104,9 +104,9 @@ systemctl status zabbix-server
 ### Visualizar os logs do zabbix-server
 tail -f /var/log/zabbix/zabbix_server.log
 
-### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# Host Client zabbix 
-### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+### -----------------------------------------------------------------------------------------------------------------------------
+# Host Client zabbix :computer:
+### -----------------------------------------------------------------------------------------------------------------------------
 
 
 ### Baixando o repositório do zabbix 5.0
@@ -131,8 +131,10 @@ Server= 127.0.0.1
 ### Alterar o nome do seu host “agente”. No exemplo abaixo foi utilizado um exemplo da
 ### configuração trocando somente o nome dex.
 Hostname=dex
-
+### -----------------------------------------------------------------------------------------------------------------------------
 # GPU
+### -----------------------------------------------------------------------------------------------------------------------------
+
  Para saber qual a versão da placa de vídeo e o drive que ela suporta é só digitar
 **nvidia-smi**, a partir das informações mostradas é só digitar **sudo apt install nvidia-versão_disponível**. Ex: **sudo apt install nvidia-340**.
 	Após a instalação do driver é necessário reiniciar o sistema, digitando **sudo reboot**. E logo em seguida é necessário  fazer o restart do zabbix sudo systemctl restart zabbix-agent. Agora vamos fazer o start **sudo systemctl start zabbix-agent** e para visualizar o zabbix está funcionando corretamente é só digitar o **sudo systemctl status zabbix-agent**.
@@ -161,9 +163,10 @@ sudo systemctl restart zabbix-client
 ### Para visualizar o log do agente
 sudo tail -f /var/log/zabbix/zabbix_agentd.log
 
-
-
+### -----------------------------------------------------------------------------------------------------------------------------
 # Zabbix Web
+### -----------------------------------------------------------------------------------------------------------------------------
+
  Para acessar o zabbix web é necessário digitar o ip do zabbix server/zabbix. Após é direcionado para a página de login do zabbix, então é necessario inserir o usuario que por padrão denomina-se **Admin** e a senha **zabbiz**.
 
  Ao fazer o login, vá para o menu lateral, clicando em Configuração -> “host” e inserir o **Template OS Linux by Zabbix agent**. Para inserir o segundo template  do monitoramento dos sensores de uma placa de vídeo nvidia é necessário fazer a importação do template, pois esse não é disponibilizado pelo zabbix na parte web. O template utilizado pode ser encontrado [Aqui](https://raw.githubusercontent.com/larcc-group/Escola-de-inverno-2022-zabbix/main/nvidia.xml?token=GHSAT0AAAAAABW3RGC2WRPZKS5AEV2VQNXUYXAKQMQ). o mesmo deve ser copiado com a extensão  e colado em Link new templates no zabbix o web.
