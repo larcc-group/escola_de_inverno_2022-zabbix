@@ -11,6 +11,7 @@ Também vai ser necessário instalar o software VMWARE que vamos utilizar para c
 
 ## Configuração da máquina virtual
 2 GB memória RAM
+
 10 GB de disco
 
 ## Sugestão
