@@ -2,7 +2,10 @@
 
 [Link para baixar o VMWARE](https://www.vmware.com/br/products/workstation-player.html).
 
-# Host Server zabbix
+### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Host Server zabbix 
+### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 ### Atualizando o sistema
 sudo apt update
 
@@ -90,17 +93,22 @@ DBHost=localhost
 DBPassword=zabbix
 ### Salvar e sair
 
-### habilitando e fazendo start no xabbix-server
+### habilitando e fazendo start no zabbix-server
 systemctl start zabbix-server
 
 systemctl enable zabbix-server
+
 ### Conferir se o zabbix-server está funcionando
 systemctl status zabbix-server
 
 ### Visualizar os logs do zabbix-server
 tail -f /var/log/zabbix/zabbix_server.log
 
-# Host Client zabbix
+### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+# Host Client zabbix 
+### -------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ### Baixando o repositório do zabbix 5.0
 wget https://repo.zabbix.com/zabbix/5.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_5.0-1+focal_all.deb
 
@@ -129,7 +137,7 @@ Hostname=dex
 **nvidia-smi**, a partir das informações mostradas é só digitar **sudo apt install nvidia-versão_disponível**. Ex: **sudo apt install nvidia-340**.
 	Após a instalação do driver é necessário reiniciar o sistema, digitando **sudo reboot**. E logo em seguida é necessário  fazer o restart do zabbix sudo systemctl restart zabbix-agent. Agora vamos fazer o start **sudo systemctl start zabbix-agent** e para visualizar o zabbix está funcionando corretamente é só digitar o **sudo systemctl status zabbix-agent**.
  
-Em caso de haver uma GPU é necessário inserir no agente do zabbix zabbix_agentd.conf parâmetros no para que o zabbix web consiga acessar os dados. Podem ser encontrados [Aqui](https://raw.githubusercontent.com/RichardKav/zabbix-nvidia-smi-integration/master/README.md).
+Em caso de haver uma GPU é necessário inserir no agente do zabbix zabbix_agentd.conf parâmetros no para que o zabbix web consiga acessar os dados. Podem ser encontrados [Aqui](https://github.com/RichardKav/zabbix-nvidia-smi-integration).
 
 UserParameter=gpu.temp,nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader,nounits -i 0
 
