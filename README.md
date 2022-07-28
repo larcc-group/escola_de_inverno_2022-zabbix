@@ -1,6 +1,20 @@
- [Link para baixar o Ubuntu Server 20.04](https://ubuntu.com/download/server).
+### -------------------------------------------------------------------------------------------------------
+# Configuração do ambiente
+### -------------------------------------------------------------------------------------------------------
+Para iniciarmos o nosso curso é necessário fazer a instalação do sistema Ubuntu Server.
+Para baixar a iso do sistema podem acessar o link.
 
+[Link para baixar o Ubuntu Server 20.04](https://ubuntu.com/download/server).
+
+Também vai ser necessário instalar o software VMWARE que vamos utilizar para criar a nossa máquina virtual, o  software pode ser baixado aqui.
 [Link para baixar o VMWARE](https://www.vmware.com/br/products/workstation-player.html).
+
+## Configuração da máquina virtual
+2 GB memória RAM
+10 GB de disco
+
+## Sugestão
+### Desabilitar o firewall do windows para conseguir acessar o zabbix web
 
 ### -------------------------------------------------------------------------------------------------------
 # Host Server zabbix 🖥️
