@@ -4,7 +4,7 @@
 Para iniciarmos o nosso curso é necessário fazer a instalação do sistema Ubuntu Server.
 Para baixar a iso do sistema podem acessar o link.
 
-[Link para baixar o Ubuntu Server 20.04](https://ubuntu.com/download/server).
+[Link para baixar o Ubuntu Server 20.04](https://releases.ubuntu.com/20.04.4/ubuntu-20.04.4-live-server-amd64.iso).
 
 Também vai ser necessário instalar o software VMWARE que vamos utilizar para criar a nossa máquina virtual, o  software pode ser baixado aqui.
 [Link para baixar o VMWARE](https://www.vmware.com/br/products/workstation-player.html).
@@ -13,6 +13,8 @@ Também vai ser necessário instalar o software VMWARE que vamos utilizar para c
 2 GB memória RAM
 
 10 GB de disco
+
+2 CPU
 
 ## Sugestão
 ### Desabilitar o firewall do windows para conseguir acessar o zabbix web
