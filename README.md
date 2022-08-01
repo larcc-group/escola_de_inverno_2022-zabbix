@@ -41,15 +41,7 @@ systemctl status apache2
 sudo apt install php-cli php-common php-dev php-pear php-gd php-mbstring php-mysql php-xml php-bcmath libapache2-mod-php
 
 ### Configurando o timezone do php
-cd /etc/php/7.4/
-
-### Editando o arquivo php.ini
-nano apache2/php.ini
-
-nano cli/php.ini
-
-### Editando o timezone de apache.conf
-nano /etc/zabbix/apache.conf
+nano /etc/php/7.4/cli/php.ini
 
 ##Descomentar o date.timezone e mudar para America/Sao_Paulo
 
@@ -109,6 +101,9 @@ DBHost=localhost
 
 DBPassword=zabbix
 ### Salvar e sair
+
+### Editando o timezone de apache.conf do zabbix
+nano /etc/zabbix/apache.conf
 
 ### habilitando e fazendo start no zabbix-server
 systemctl start zabbix-server
