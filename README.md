@@ -113,6 +113,12 @@ systemctl enable zabbix-server
 ### Conferir se o zabbix-server está funcionando
 systemctl status zabbix-server
 
+### Para ter uma garantia que o serviço vai funcionar é necessario fazer o restart do apache e o zabbix
+
+systemctl restart zabbix-server
+
+systemctl restart apache
+
 ### Visualizar os logs do zabbix-server
 tail -f /var/log/zabbix/zabbix_server.log
 
@@ -143,6 +149,14 @@ Server= 127.0.0.1
 ### Alterar o nome do seu host “agente”. No exemplo abaixo foi utilizado um exemplo da
 ### configuração trocando somente o nome dex.
 Hostname=dex
+
+### Salvar e sair
+
+### Para ter uma garantia que o serviço vai funcionar é necessario fazer o restart do zabbix
+
+systemctl restart zabbix-server
+
+
 ### -------------------------------------------------------------------------------------------------------
 # GPU
 ### -------------------------------------------------------------------------------------------------------
